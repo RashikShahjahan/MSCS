@@ -20,7 +20,7 @@ class JobApplication(BaseModel):
 app = FastAPI()
 
 # MongoDB client setup
-client = AsyncIOMotorClient(os.getenv("MONGO_URL", "mongodb://localhost:27017"))
+client = AsyncIOMotorClient(os.getenv("MONGO_URI", "mongodb://localhost:27017"))
 db = client["job_app_tracker"]  # Database name
 collection = db["applications"]  # Collection name
 
